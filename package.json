@@ -42,6 +42,10 @@
   "peerDependencies": {
     "@astrojs/starlight": ">=0.30.0"
   },
+  "dependencies": {
+    "@fontsource/geist-mono": "^5.1.0",
+    "@fontsource/geist-sans": "^5.1.0"
+  },
   "devDependencies": {
     "@adrianub/eslint-config": "^0.0.4",
     "@astrojs/starlight": "^0.30.3",

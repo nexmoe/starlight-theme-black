@@ -1,0 +1,59 @@
+:root:root {
+  --sl-font: 'Geist Sans', sans-serif;
+  --sl-font-mono: 'Geist Mono', monospace;
+  --sl-color-bg-nav: var(--sl-color-bg);
+  --sl-color-bg-sidebar: var(--sl-color-bg);
+
+  --sl-border-radius-sm: 4px;
+  --sl-border-radius-md: 8px;
+  --sl-border-radius-lg: 12px;
+
+  --sl-color-accent-high: var(--sl-color-text-invert);
+  --sl-black-accent-foreground: var(--sl-color-text-invert);
+  --sl-color-text-accent: var(--sl-color-text-invert);
+}
+
+:root[data-theme='dark'] {
+  --sl-color-bg: #09090b;
+
+  --sl-color-text-invert: hsl(0 0% 98%);
+  --sl-black-accent: hsl(240 3.7% 15.9%);
+}
+
+:root[data-theme='light'] {
+  --sl-color-bg: #ffffff;
+
+  --sl-color-text-invert: hsl(240 10% 3.9%);
+  --sl-black-accent: hsl(240 4.8% 95.9%);
+}
+
+div.sidebar-pane a:hover,
+div.sidebar-pane a[aria-current='page'] {
+  background-color: var(--sl-black-accent);
+  color: var(--sl-black-accent-foreground);
+}
+
+div.sidebar-pane {
+  border-inline-end: 1px solid var(--sl-black-accent);
+}
+
+div.sidebar-pane a {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.sl-link-button {
+  border-radius: var(--sl-border-radius-md);
+}
+
+header.header {
+  border-bottom: 1px solid var(--sl-black-accent);
+}
+
+.right-sidebar {
+  border-inline-start: none;
+}
+
+.content-panel {
+  border-top: none !important;
+}
