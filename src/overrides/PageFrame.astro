@@ -75,6 +75,8 @@ const { hasSidebar } = Astro.props
     z-index: 50;
     top: 0;
     position: sticky;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   :global([data-theme='dark']) .layout__header {
