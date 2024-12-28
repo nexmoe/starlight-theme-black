@@ -47,11 +47,11 @@
   margin: 0;
 }
 
-.sl-markdown-content p:not(:where(.not-content *)) {
+.sl-markdown-content p:not(:where(.not-content *)):not(li p) {
   line-height: 1.75rem;
 }
 
-.sl-markdown-content p:first-child:not(:where(.not-content *)) {
+.sl-markdown-content p:first-child:not(:where(.not-content *)):not(li p) {
   margin-top: 1.5rem;
 }
 
