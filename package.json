@@ -31,7 +31,9 @@
     "./overrides/Header.astro": "./src/overrides/Header.astro",
     "./overrides/SiteTitle.astro": "./src/overrides/SiteTitle.astro",
     "./overrides/Sidebar.astro": "./src/overrides/Sidebar.astro",
-    "./overrides/TwoColumnContent.astro": "./src/overrides/TwoColumnContent.astro"
+    "./overrides/TwoColumnContent.astro": "./src/overrides/TwoColumnContent.astro",
+    "./overrides/ContentPanel.astro": "./src/overrides/ContentPanel.astro",
+    "./overrides/PageTitle.astro": "./src/overrides/PageTitle.astro"
   },
   "files": [
     "src"

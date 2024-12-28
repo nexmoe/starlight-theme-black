@@ -17,6 +17,8 @@ export default function starlightThemeBlack(): StarlightPlugin {
               'SiteTitle',
               'Sidebar',
               'TwoColumnContent',
+              'ContentPanel',
+              'PageTitle',
             ],
             logger,
           ),
