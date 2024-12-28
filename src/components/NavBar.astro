@@ -1,0 +1,36 @@
+<nav class="nav-bar">
+  <a href="/docs">Docs</a>
+</nav>
+
+<style>
+  .nav-bar {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    gap: 1rem;
+    align-items: center;
+    display: flex;
+  }
+
+  @media (min-width: 1280px) {
+    .nav-bar {
+      gap: 1.5rem;
+    }
+  }
+
+  .nav-bar a {
+    text-decoration: none;
+
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.15s;
+    color: hsl(var(--foreground) / 0.8);
+  }
+
+  .nav-bar a:hover {
+    color: hsl(var(--foreground) / 0.8);
+  }
+
+  .nav-bar a:active {
+    color: hsl(var(--foreground));
+  }
+</style>

@@ -1,0 +1,84 @@
+---
+import type { Props as StarlightProps } from '@astrojs/starlight/props'
+
+interface Props {
+  sublist: StarlightProps['sidebar']
+  nested?: boolean
+}
+
+const { sublist, nested } = Astro.props
+---
+
+{
+  sublist.map((entry) =>
+    entry.type === 'link' ? (
+      <a
+        href={entry.href}
+        aria-current={entry.isCurrent && 'page'}
+        class:list={['entry-link', entry.attrs.class]}
+        {...entry.attrs}
+      >
+        {entry.label}
+      </a>
+    ) : (
+      <div class="container-sidebar-entry">
+        <h4 class="entry-title">{entry.label}</h4>
+        <div class="container-group-link">
+          <Astro.self sublist={entry.entries} nested />
+        </div>
+      </div>
+    ),
+  )
+}
+
+<style>
+  .container-sidebar-entry {
+    gap: 0.25rem;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .entry-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  .container-group-link {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    gap: 0.125rem;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
+    display: grid;
+  }
+
+  .entry-link {
+    text-underline-offset: 2px;
+    color: hsl(var(--accent-foreground));
+    font-weight: 500;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: var(--radius);
+    align-items: center;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  .entry-link[aria-current='page'] {
+    background-color: hsl(var(--accent));
+  }
+
+  .entry-link:hover {
+    color: hsl(var(--accent-foreground));
+    background-color: hsl(var(--accent));
+  }
+</style>

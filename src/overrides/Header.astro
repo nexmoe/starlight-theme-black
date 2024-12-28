@@ -1,0 +1,86 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+import config from 'virtual:starlight/user-config'
+import Search from '@astrojs/starlight/components/Search.astro'
+import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro'
+import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro'
+
+import ThemeSelect from './ThemeSelect.astro'
+import SiteTitle from './SiteTitle.astro'
+import NavBar from '../components/NavBar.astro'
+import MobileMenuToggle from './MobileMenuToggle.astro'
+
+/**
+ * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
+ */
+const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro'
+---
+
+<div class="site-title-wrapper">
+  <SiteTitle {...Astro.props} />
+  <NavBar />
+</div>
+
+<MobileMenuToggle />
+
+<div class="header-right">
+  <div class="header-search">
+    {shouldRenderSearch && <Search {...Astro.props} />}
+  </div>
+
+  <nav class="header-nav">
+    <div>
+      <SocialIcons {...Astro.props} />
+    </div>
+    <div>
+      <ThemeSelect {...Astro.props} />
+    </div>
+    <div>
+      <LanguageSelect {...Astro.props} />
+    </div>
+  </nav>
+</div>
+
+<style>
+  .site-title-wrapper {
+    display: none;
+    margin-right: 1rem;
+  }
+  @media (min-width: 768px) {
+    .site-title-wrapper {
+      display: flex;
+    }
+  }
+
+  .header-right {
+    gap: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 0%;
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    .header-right {
+      justify-content: flex-end;
+    }
+  }
+
+  .header-search {
+    flex: 1 1 0%;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .header-search {
+      flex: none;
+      width: auto;
+    }
+  }
+
+  .header-nav {
+    gap: 0.125rem;
+    align-items: center;
+    display: flex;
+  }
+</style>

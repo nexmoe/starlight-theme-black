@@ -12,6 +12,11 @@ export default function starlightThemeBlack(): StarlightPlugin {
             config,
             [
               'ThemeSelect',
+              'PageFrame',
+              'Header',
+              'SiteTitle',
+              'Sidebar',
+              'TwoColumnContent',
             ],
             logger,
           ),

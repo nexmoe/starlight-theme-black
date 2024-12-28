@@ -6,6 +6,11 @@ import starlightThemeBlack from 'starlight-theme-black'
 export default defineConfig({
   integrations: [
     starlight({
+      logo: {
+        dark: './src/assets/logo-dark.svg',
+        light: './src/assets/logo-light.svg',
+        alt: 'Starlight Black',
+      },
       editLink: {
         baseUrl: 'https://github.com/adrian-ub/starlight-theme-black/edit/main/docs/',
       },
@@ -13,13 +18,16 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Start Here',
-          items: [{ slug: 'getting-started' }],
+          items: [
+            { slug: 'getting-started' },
+            { slug: 'test-toc' },
+          ],
         },
       ],
       social: {
         github: 'https://github.com/adrian-ub/starlight-theme-black',
       },
-      title: 'Starlight Black',
+      title: 'starlight/black',
     }),
   ],
 })
