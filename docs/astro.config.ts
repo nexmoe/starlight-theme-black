@@ -20,7 +20,7 @@ export default defineConfig({
           label: 'Start Here',
           items: [
             { slug: 'getting-started' },
-            { slug: 'test-toc' },
+            { slug: 'test-toc', badge: 'New' },
           ],
         },
       ],
