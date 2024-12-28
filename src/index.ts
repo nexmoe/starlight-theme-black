@@ -20,6 +20,7 @@ export default function starlightThemeBlack(): StarlightPlugin {
               'ContentPanel',
               'PageTitle',
               'MarkdownContent',
+              'Hero',
             ],
             logger,
           ),
