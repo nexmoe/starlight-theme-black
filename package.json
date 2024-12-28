@@ -35,7 +35,8 @@
     "./overrides/ContentPanel.astro": "./src/overrides/ContentPanel.astro",
     "./overrides/PageTitle.astro": "./src/overrides/PageTitle.astro",
     "./overrides/MarkdownContent.astro": "./src/overrides/MarkdownContent.astro",
-    "./overrides/Hero.astro": "./src/overrides/Hero.astro"
+    "./overrides/Hero.astro": "./src/overrides/Hero.astro",
+    "./overrides/Footer.astro": "./src/overrides/Footer.astro"
   },
   "files": [
     "src"

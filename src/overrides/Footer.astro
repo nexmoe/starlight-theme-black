@@ -1,0 +1,37 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+import Default from '@astrojs/starlight/components/Footer.astro'
+import config from 'virtual:starlight/user-config'
+
+const {
+  pagination,
+  editUrl,
+  lastUpdated,
+  entry: {
+    data: { template },
+  },
+} = Astro.props
+
+const showFooterInSplash =
+  template === 'splash' && !!(editUrl || lastUpdated || pagination.next || pagination.prev || config.credits)
+---
+
+{
+  showFooterInSplash && (
+    <div class="container-wrapper">
+      <div class="container">
+        <Default {...Astro.props} />
+      </div>
+    </div>
+  )
+}
+
+{!showFooterInSplash && template === 'splash' && <div class="padding-negative" />}
+
+{template === 'doc' && <Default {...Astro.props} />}
+
+<style>
+  .padding-negative {
+    margin-bottom: -3vh;
+  }
+</style>

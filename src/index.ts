@@ -21,6 +21,7 @@ export default function starlightThemeBlack(): StarlightPlugin {
               'PageTitle',
               'MarkdownContent',
               'Hero',
+              'Footer',
             ],
             logger,
           ),
