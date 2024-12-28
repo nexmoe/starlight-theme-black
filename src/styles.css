@@ -3,6 +3,8 @@
   --sl-font-mono: 'Geist Mono', monospace;
 
   --radius: 0.5rem;
+
+  --sl-color-text-accent: hsl(var(--primary));
 }
 
 :root[data-theme='dark'] {
