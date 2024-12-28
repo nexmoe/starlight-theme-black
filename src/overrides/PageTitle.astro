@@ -1,27 +1,37 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
+
+const {
+  entry: {
+    data: { title, template, description },
+  },
+} = Astro.props
 ---
 
-<div class="breadcrumb">
-  <div class="truncate">Docs</div>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="m9 18 6-6-6-6"></path>
-  </svg>
-  <div class="text-foreground">{Astro.props.entry.data.title}</div>
-</div>
+{
+  template === 'doc' && (
+    <div class="breadcrumb">
+      <div class="truncate">Docs</div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+      <div class="text-foreground">{title}</div>
+    </div>
+  )
+}
 
-<h1 id="_top" class="title">{Astro.props.entry.data.title}</h1>
-<p>{Astro.props.entry.data.description}</p>
+<h1 id="_top">{title}</h1>
+{description && <p>{description}</p>}
 
 <style>
   .breadcrumb {
