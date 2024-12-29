@@ -22,6 +22,7 @@ export default function starlightThemeBlack(): StarlightPlugin {
               'MarkdownContent',
               'Hero',
               'Footer',
+              'SocialIcons',
             ],
             logger,
           ),
