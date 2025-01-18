@@ -59,8 +59,8 @@
   },
   "devDependencies": {
     "@adrianub/eslint-config": "^0.0.4",
-    "@astrojs/starlight": "^0.30.3",
-    "astro": "^5.0.2",
+    "@astrojs/starlight": "^0.31.1",
+    "astro": "^5.1.7",
     "astro-eslint-parser": "^1.1.0",
     "bumpp": "^9.9.2",
     "eslint": "^9.15.0",
