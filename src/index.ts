@@ -1,15 +1,25 @@
 import type { StarlightPlugin } from '@astrojs/starlight/types'
 
+import { StarlightThemeBlackConfigSchema, type StarlightThemeBlackUserConfig } from './libs/config'
 import { overrideComponents } from './libs/starlight'
+import { vitePluginStarlightThemeBlack } from './libs/vite'
 
-export default function starlightThemeBlack(): StarlightPlugin {
+export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserConfig): StarlightPlugin {
+  const parsedConfig = StarlightThemeBlackConfigSchema.safeParse(userConfig)
+
+  if (!parsedConfig.success) {
+    throw new Error(`The provided plugin configuration is invalid.\n${parsedConfig.error.issues.map(issue => issue.message).join('\n')}`)
+  }
+
+  const config = parsedConfig.data
+
   return {
     name: 'starlight-theme-black-plugin',
     hooks: {
-      setup({ config, logger, updateConfig }) {
+      setup({ config: starlightConfig, logger, updateConfig, addIntegration }) {
         updateConfig({
           components: overrideComponents(
-            config,
+            starlightConfig,
             [
               'ThemeSelect',
               'PageFrame',
@@ -27,7 +37,7 @@ export default function starlightThemeBlack(): StarlightPlugin {
             logger,
           ),
           customCss: [
-            ...(config.customCss ?? []),
+            ...(starlightConfig.customCss ?? []),
             '@fontsource/geist-mono/100.css',
             '@fontsource/geist-mono/200.css',
             '@fontsource/geist-mono/300.css',
@@ -49,12 +59,21 @@ export default function starlightThemeBlack(): StarlightPlugin {
             'starlight-theme-black/styles',
           ],
           expressiveCode:
-            config.expressiveCode === false
+            starlightConfig.expressiveCode === false
               ? false
               : {
                   themes: ['github-dark-default', 'github-light-default'],
-                  ...(typeof config.expressiveCode === 'object' ? config.expressiveCode : {}),
+                  ...(typeof starlightConfig.expressiveCode === 'object' ? starlightConfig.expressiveCode : {}),
                 },
+        })
+
+        addIntegration({
+          name: 'starlight-theme-black-integration',
+          hooks: {
+            'astro:config:setup': ({ updateConfig }) => {
+              updateConfig({ vite: { plugins: [vitePluginStarlightThemeBlack(config)] } })
+            },
+          },
         })
       },
     },

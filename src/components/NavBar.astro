@@ -1,5 +1,17 @@
+---
+import userConfig from 'virtual:starlight-theme-black-config'
+
+const currentPath = Astro.url.pathname
+---
+
 <nav class="nav-bar">
-  <a href="/docs">Docs</a>
+  {
+    userConfig.navLinks?.map((link) => (
+      <a class:list={[{ active: currentPath === link.slug }]} href={link.slug}>
+        {link.text}
+      </a>
+    ))
+  }
 </nav>
 
 <style>
@@ -30,7 +42,7 @@
     color: hsl(var(--foreground) / 0.8);
   }
 
-  .nav-bar a:active {
+  .nav-bar a.active {
     color: hsl(var(--foreground));
   }
 </style>

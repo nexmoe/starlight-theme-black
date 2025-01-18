@@ -1,3 +1,9 @@
+declare module 'virtual:starlight-theme-black-config' {
+  const StarlightThemeBlackConfig: import('./libs/config').StarlightThemeBlackConfig
+
+  export default StarlightThemeBlackConfig
+}
+
 declare module 'virtual:starlight/user-config' {
   const Config: import('@astrojs/starlight/types').StarlightConfig
   export default Config

@@ -14,7 +14,11 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/adrian-ub/starlight-theme-black/edit/main/docs/',
       },
-      plugins: [starlightThemeBlack()],
+      plugins: [
+        starlightThemeBlack({
+          navLinks: [{ text: 'Docs', slug: '/getting-started' }],
+        }),
+      ],
       sidebar: [
         {
           label: 'Start Here',
