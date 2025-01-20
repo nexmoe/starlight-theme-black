@@ -1,7 +1,7 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
 import config from 'virtual:starlight/user-config'
-import Search from '@astrojs/starlight/components/Search.astro'
+import Search from './Search.astro'
 import SocialIcons from './SocialIcons.astro'
 import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro'
 
@@ -24,9 +24,7 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
 <MobileMenuToggle />
 
 <div class="header-right">
-  <div class="header-search">
-    {shouldRenderSearch && <Search {...Astro.props} />}
-  </div>
+  {shouldRenderSearch && <Search {...Astro.props} />}
 
   <nav class="header-nav">
     <div>
@@ -63,18 +61,6 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
   @media (min-width: 768px) {
     .header-right {
       justify-content: flex-end;
-    }
-  }
-
-  .header-search {
-    flex: 1 1 0%;
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    .header-search {
-      flex: none;
-      width: auto;
     }
   }
 

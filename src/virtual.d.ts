@@ -16,3 +16,9 @@ declare module 'virtual:starlight/user-images' {
     light?: ImageMetadata
   }
 }
+
+declare module 'virtual:starlight/pagefind-config' {
+  export const pagefindUserConfig: Partial<
+    Extract<import('@astrojs/starlight/types').StarlightConfig['pagefind'], object>
+  >
+}
