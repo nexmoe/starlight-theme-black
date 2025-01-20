@@ -38,7 +38,8 @@
     "./overrides/MarkdownContent.astro": "./src/overrides/MarkdownContent.astro",
     "./overrides/Hero.astro": "./src/overrides/Hero.astro",
     "./overrides/Footer.astro": "./src/overrides/Footer.astro",
-    "./overrides/SocialIcons.astro": "./src/overrides/SocialIcons.astro"
+    "./overrides/SocialIcons.astro": "./src/overrides/SocialIcons.astro",
+    "./overrides/Pagination.astro": "./src/overrides/Pagination.astro"
   },
   "files": [
     "src"

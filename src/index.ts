@@ -33,6 +33,7 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
               'Hero',
               'Footer',
               'SocialIcons',
+              'Pagination',
             ],
             logger,
           ),
