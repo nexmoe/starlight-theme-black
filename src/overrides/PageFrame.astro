@@ -1,5 +1,8 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
+import { marked } from 'marked'
+
+import userConfig from 'virtual:starlight-theme-black-config'
 
 const { hasSidebar } = Astro.props
 ---
@@ -33,13 +36,7 @@ const { hasSidebar } = Astro.props
     <footer class="footer">
       <div class="container-wrapper">
         <div class="container footer-container">
-          <div class="footer-text">
-            Built & designed by
-            <a href="https://twitter.com/shadcn" target="_blank" rel="noreferrer">shadcn</a>. Ported to Astro Starlight
-            by <a href="https://github.com/adrian-ub" target="_blank" rel="noreferrer">Adrián UB</a>. The source code is
-            available on
-            <a href="https://github.com/adrian-ub/starlight-theme-black" target="_blank" rel="noreferrer">GitHub</a>.
-          </div>
+          <div class="footer-text" set:html={marked.parseInline(userConfig.footerText)} />
         </div>
       </div>
     </footer>
@@ -197,7 +194,9 @@ const { hasSidebar } = Astro.props
       text-align: left;
     }
   }
+</style>
 
+<style is:global>
   .footer-text a {
     text-underline-offset: 4px;
     text-decoration-line: underline;
