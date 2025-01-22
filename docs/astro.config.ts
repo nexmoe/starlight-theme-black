@@ -16,7 +16,21 @@ export default defineConfig({
       },
       plugins: [
         starlightThemeBlack({
-          navLinks: [{ text: 'Docs', slug: '/getting-started' }],
+          navLinks: [
+            {
+              label: 'Docs',
+              link: '/getting-started',
+            },
+            {
+              label: 'Starlight',
+              link: 'https://starlight.astro.build',
+              badge: 'External',
+              attrs: {
+                target: '_blank',
+                rel: 'noopener',
+              },
+            },
+          ],
         }),
       ],
       sidebar: [
