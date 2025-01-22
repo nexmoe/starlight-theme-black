@@ -3,6 +3,7 @@ import type { Props } from '@astrojs/starlight/props'
 import { marked } from 'marked'
 
 import userConfig from 'virtual:starlight-theme-black-config'
+import Drawer from '../components/Drawer.astro'
 
 const { hasSidebar } = Astro.props
 ---
@@ -41,6 +42,7 @@ const { hasSidebar } = Astro.props
       </div>
     </footer>
   </div>
+  <Drawer {...Astro.props} />
 </div>
 
 <style>
