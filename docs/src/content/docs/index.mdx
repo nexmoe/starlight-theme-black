@@ -8,12 +8,15 @@ template: splash
 editUrl: false
 hero:
   tagline: Starlight theme inspired by Shadcn docs
-  image:
-    file: ../../assets/houston.webp
   actions:
     - text: Get Started
       link: /getting-started/
-      icon: right-arrow
+    - text: Browse Starlight
+      link: https://starlight.astro.build/
+      variant: minimal
+      attrs:
+        target: _blank
+        rel: noopener noreferrer
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components'
