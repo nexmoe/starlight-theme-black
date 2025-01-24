@@ -15,7 +15,7 @@ const { siteTitleHref, sidebar } = Astro.props
     </div>
     <div class="body">
       <div class="links-nav">
-        <a href={siteTitleHref}>Home</a>
+        <a href={siteTitleHref}>{Astro.locals.t('theme-black.home')}</a>
         {
           userConfig.navLinks?.map((nav) => {
             const absoluteLinkRegex = /^https?:\/\//

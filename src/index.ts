@@ -16,7 +16,7 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
   return {
     name: 'starlight-theme-black-plugin',
     hooks: {
-      setup({ config: starlightConfig, logger, updateConfig, addIntegration }) {
+      setup({ config: starlightConfig, logger, updateConfig, addIntegration, injectTranslations }) {
         updateConfig({
           components: overrideComponents(
             starlightConfig,
@@ -67,6 +67,15 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
                   themes: ['github-dark-default', 'github-light-default'],
                   ...(typeof starlightConfig.expressiveCode === 'object' ? starlightConfig.expressiveCode : {}),
                 },
+        })
+
+        injectTranslations({
+          en: {
+            'theme-black.home': 'Home',
+          },
+          es: {
+            'theme-black.home': 'Inicio',
+          },
         })
 
         addIntegration({
