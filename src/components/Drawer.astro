@@ -1,6 +1,8 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
 import userConfig from 'virtual:starlight-theme-black-config'
+import { getTranslation } from './NavBar.astro'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const { siteTitleHref, sidebar } = Astro.props
 ---
@@ -14,7 +16,24 @@ const { siteTitleHref, sidebar } = Astro.props
     <div class="body">
       <div class="links-nav">
         <a href={siteTitleHref}>Home</a>
-        {userConfig.navLinks?.map((link) => <a href={link.slug}>{link.text}</a>)}
+        {
+          userConfig.navLinks?.map((nav) => {
+            const absoluteLinkRegex = /^https?:\/\//
+
+            const link =
+              !absoluteLinkRegex.test(nav.link) && Astro.currentLocale
+                ? getRelativeLocaleUrl(Astro.currentLocale, nav.link)
+                : nav.link
+            const label = typeof nav.label === 'string' ? nav.label : getTranslation(nav.label, nav.link, 'label')
+
+            return (
+              <a href={link} {...nav.attrs}>
+                {label}
+                {nav.badge && <span class="badge">{nav.badge}</span>}
+              </a>
+            )
+          })
+        }
       </div>
 
       <div class="links-docs">
@@ -161,5 +180,21 @@ const { siteTitleHref, sidebar } = Astro.props
     line-height: 1.5rem;
     color: hsl(var(--muted-foreground));
     text-decoration: inherit;
+  }
+
+  .badge {
+    padding-top: 0.125rem;
+    padding-bottom: 0.125rem;
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+    margin-left: 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    background: #adfa1d;
+    color: #000000;
   }
 </style>
