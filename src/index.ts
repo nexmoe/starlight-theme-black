@@ -72,9 +72,13 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
         injectTranslations({
           en: {
             'theme-black.home': 'Home',
+            'theme-black.links.doc': 'Docs',
+            'theme-black.links.api': 'API Reference',
           },
           es: {
             'theme-black.home': 'Inicio',
+            'theme-black.links.doc': 'Docs',
+            'theme-black.links.api': 'Referencia de la API',
           },
         })
 
