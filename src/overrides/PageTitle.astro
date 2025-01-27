@@ -1,5 +1,6 @@
 ---
 import type { Props as StarlightProps } from '@astrojs/starlight/props'
+import { PAGE_TITLE_ID } from '../constants'
 
 export type Props = Omit<StarlightProps, 'entry'> & {
   entry: StarlightProps['entry'] & {
@@ -41,7 +42,7 @@ const {
   )
 }
 
-<h1 id="_top">{title}</h1>
+<h1 id={PAGE_TITLE_ID}>{title}</h1>
 {description && <p>{description}</p>}
 
 {
