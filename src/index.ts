@@ -35,6 +35,8 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
               'SocialIcons',
               'Pagination',
               'Search',
+              'TableOfContents',
+              'PageSidebar',
             ],
             logger,
           ),

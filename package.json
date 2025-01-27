@@ -41,7 +41,9 @@
     "./overrides/Footer.astro": "./src/overrides/Footer.astro",
     "./overrides/SocialIcons.astro": "./src/overrides/SocialIcons.astro",
     "./overrides/Pagination.astro": "./src/overrides/Pagination.astro",
-    "./overrides/Search.astro": "./src/overrides/Search.astro"
+    "./overrides/Search.astro": "./src/overrides/Search.astro",
+    "./overrides/TableOfContents.astro": "./src/overrides/TableOfContents.astro",
+    "./overrides/PageSidebar.astro": "./src/overrides/PageSidebar.astro"
   },
   "files": [
     "src"

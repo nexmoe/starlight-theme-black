@@ -1,0 +1,22 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+import TableOfContents from './TableOfContents.astro'
+---
+
+{
+  Astro.props.toc && (
+    <div>
+      <TableOfContents {...Astro.props} />
+    </div>
+  )
+}
+
+<style>
+  div {
+    padding-top: 1rem;
+    height: calc(100vh - 3.5rem);
+    margin-top: -1.5rem;
+    top: 5rem;
+    position: sticky;
+  }
+</style>
