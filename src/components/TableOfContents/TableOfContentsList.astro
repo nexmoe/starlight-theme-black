@@ -36,14 +36,18 @@ const { toc, depth = 0 } = Astro.props
     margin-top: 0;
   }
 
-  ul > li > a {
+  a {
     text-decoration-line: none;
     color: hsl(var(--muted-foreground));
     display: inline-block;
     text-decoration: inherit;
   }
 
-  ul > li > a:hover {
+  a:hover {
+    color: hsl(var(--foreground));
+  }
+
+  a[aria-current] {
     color: hsl(var(--foreground));
   }
 
