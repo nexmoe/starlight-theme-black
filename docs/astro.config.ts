@@ -4,6 +4,7 @@ import starlightThemeBlack from 'starlight-theme-black'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://starlight-theme-black.vercel.app/',
   integrations: [
     starlight({
       logo: {
