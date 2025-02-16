@@ -1,10 +1,9 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
 import userConfig from 'virtual:starlight-theme-black-config'
 import { getTranslation } from './NavBar.astro'
 import { getRelativeLocaleUrl } from 'astro:i18n'
 
-const { siteTitleHref, sidebar } = Astro.props
+const { siteTitleHref, sidebar } = Astro.locals.starlightRoute
 ---
 
 <div popover="auto" id="drawer">

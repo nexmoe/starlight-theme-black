@@ -1,12 +1,11 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
 import TableOfContents from './TableOfContents.astro'
 ---
 
 {
-  Astro.props.toc && (
+  Astro.locals.starlightRoute.toc && (
     <div>
-      <TableOfContents {...Astro.props} />
+      <TableOfContents />
     </div>
   )
 }

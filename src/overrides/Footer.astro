@@ -1,5 +1,4 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
 import Default from '@astrojs/starlight/components/Footer.astro'
 import config from 'virtual:starlight/user-config'
 
@@ -10,7 +9,7 @@ const {
   entry: {
     data: { template },
   },
-} = Astro.props
+} = Astro.locals.starlightRoute
 
 const showFooterInSplash =
   template === 'splash' && !!(editUrl || lastUpdated || pagination.next || pagination.prev || config.credits)
@@ -20,7 +19,7 @@ const showFooterInSplash =
   showFooterInSplash && (
     <div class="container-wrapper">
       <div class="container">
-        <Default {...Astro.props} />
+        <Default />
       </div>
     </div>
   )
@@ -28,7 +27,7 @@ const showFooterInSplash =
 
 {!showFooterInSplash && template === 'splash' && <div class="padding-negative" />}
 
-{template === 'doc' && <Default {...Astro.props} />}
+{template === 'doc' && <Default />}
 
 <style>
   .padding-negative {

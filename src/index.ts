@@ -16,7 +16,7 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
   return {
     name: 'starlight-theme-black-plugin',
     hooks: {
-      setup({ config: starlightConfig, logger, updateConfig, addIntegration, injectTranslations }) {
+      'config:setup': function ({ config: starlightConfig, logger, updateConfig, addIntegration }) {
         updateConfig({
           components: overrideComponents(
             starlightConfig,
@@ -71,6 +71,16 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
                 },
         })
 
+        addIntegration({
+          name: 'starlight-theme-black-integration',
+          hooks: {
+            'astro:config:setup': ({ updateConfig }) => {
+              updateConfig({ vite: { plugins: [vitePluginStarlightThemeBlack(config)] } })
+            },
+          },
+        })
+      },
+      'i18n:setup': function ({ injectTranslations }) {
         injectTranslations({
           en: {
             'theme-black.home': 'Home',
@@ -81,15 +91,6 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
             'theme-black.home': 'Inicio',
             'theme-black.links.doc': 'Docs',
             'theme-black.links.api': 'Referencia de la API',
-          },
-        })
-
-        addIntegration({
-          name: 'starlight-theme-black-integration',
-          hooks: {
-            'astro:config:setup': ({ updateConfig }) => {
-              updateConfig({ vite: { plugins: [vitePluginStarlightThemeBlack(config)] } })
-            },
           },
         })
       },

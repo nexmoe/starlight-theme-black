@@ -1,7 +1,5 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
-
-const { pagination } = Astro.props
+const { pagination } = Astro.locals.starlightRoute
 const { prev, next } = pagination
 ---
 

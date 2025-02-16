@@ -1,8 +1,8 @@
 ---
-import type { Props as StarlightProps } from '@astrojs/starlight/props'
+import type { StarlightRouteData } from '@astrojs/starlight/route-data'
 
 interface Props {
-  sublist: StarlightProps['sidebar']
+  sublist: StarlightRouteData['sidebar']
   nested?: boolean
 }
 

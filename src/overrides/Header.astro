@@ -1,5 +1,4 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
 import config from 'virtual:starlight/user-config'
 import Search from './Search.astro'
 import SocialIcons from './SocialIcons.astro'
@@ -17,24 +16,24 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
 ---
 
 <div class="site-title-wrapper">
-  <SiteTitle {...Astro.props} />
+  <SiteTitle />
   <NavBar />
 </div>
 
 <MobileMenuToggle />
 
 <div class="header-right">
-  {shouldRenderSearch && <Search {...Astro.props} />}
+  {shouldRenderSearch && <Search />}
 
   <nav class="header-nav">
     <div>
-      <SocialIcons {...Astro.props} />
+      <SocialIcons />
     </div>
     <div>
-      <ThemeSelect {...Astro.props} />
+      <ThemeSelect />
     </div>
     <div>
-      <LanguageSelect {...Astro.props} />
+      <LanguageSelect />
     </div>
   </nav>
 </div>

@@ -1,23 +1,11 @@
 ---
-import type { Props as StarlightProps } from '@astrojs/starlight/props'
 import { PAGE_TITLE_ID } from '../constants'
-
-export type Props = Omit<StarlightProps, 'entry'> & {
-  entry: StarlightProps['entry'] & {
-    data: StarlightProps['entry']['data'] & {
-      links?: {
-        doc: string
-        api: string
-      }
-    }
-  }
-}
 
 const {
   entry: {
     data: { title, template, description, links },
   },
-} = Astro.props
+} = Astro.locals.starlightRoute
 ---
 
 {

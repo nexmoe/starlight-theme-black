@@ -1,9 +1,7 @@
 ---
-import type { Props } from '@astrojs/starlight/props'
-
 import SidebarSublist from './SidebarSublist.astro'
 
-const { sidebar } = Astro.props
+const { sidebar } = Astro.locals.starlightRoute
 ---
 
 <div class="sidebar">

@@ -1,12 +1,11 @@
 ---
 import { Image } from 'astro:assets'
-import type { Props } from '@astrojs/starlight/props'
 import LinkButton from '../components/LinkButton.astro'
 
 import ContainerSection from '../components/ContainerSection.astro'
 import { PAGE_TITLE_ID } from '../constants'
 
-const { data } = Astro.props.entry
+const { data } = Astro.locals.starlightRoute.entry
 const { title = data.title, tagline, image, actions = [] } = data.hero || {}
 
 const imageAttrs = {
