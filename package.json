@@ -1,7 +1,7 @@
 {
   "name": "starlight-theme-black",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "packageManager": "pnpm@9.14.4",
   "description": "Starlight theme inspired by Shadcn docs",
   "author": "Adrián UB",
