@@ -55,7 +55,16 @@ import { Steps, Tabs, TabItem } from '@astrojs/starlight/components'
    export default defineConfig({
      integrations: [
        starlight({
-   +      plugins: [starlightThemeBlack()],
+   +      plugins: [
+   +        starlightThemeBlack({
+   +          navLinks: [{ // optional
+   +            label: 'Docs',
+   +            link: '/getting-started',
+   +          }],
+   +          footerText: //optional
+   +            'Built & designed by [shadcn](https://twitter.com/shadcn). Ported to Astro Starlight by [Adrián UB](https://github.com/adrian-ub). The source code is available on [GitHub](https://github.com/adrian-ub/starlight-theme-black).'
+   +       })
+   +      ],
          title: 'My Docs',
        }),
      ],
