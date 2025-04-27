@@ -68,8 +68,8 @@
   },
   "devDependencies": {
     "@adrianub/eslint-config": "^0.0.4",
-    "@astrojs/starlight": "^0.32.0",
-    "astro": "^5.3.0",
+    "@astrojs/starlight": "^0.34.1",
+    "astro": "^5.7.5",
     "astro-eslint-parser": "^1.1.0",
     "bumpp": "^9.9.2",
     "eslint": "^9.15.0",
@@ -80,7 +80,7 @@
     "simple-git-hooks": "^2.11.1"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
   },
   "lint-staged": {
     "*": "eslint --fix"
