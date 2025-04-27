@@ -61,7 +61,7 @@ const { sublist, nested } = Astro.props
 
   .entry-link {
     text-underline-offset: 2px;
-    color: hsl(var(--accent-foreground));
+    color: var(--accent-foreground);
     font-weight: 500;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -75,12 +75,12 @@ const { sublist, nested } = Astro.props
   }
 
   .entry-link[aria-current='page'] {
-    background-color: hsl(var(--accent));
+    background-color: var(--accent);
   }
 
   .entry-link:hover {
-    color: hsl(var(--accent-foreground));
-    background-color: hsl(var(--accent));
+    color: var(--accent-foreground);
+    background-color: var(--accent);
   }
 
   .entry-badge {

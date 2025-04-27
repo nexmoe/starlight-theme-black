@@ -104,7 +104,7 @@
 }
 
 .sl-markdown-content table:not(:where(.not-content *)) > tbody > tr:nth-child(even) {
-  background-color: hsl(var(--muted));
+  background-color: var(--muted);
 }
 
 .sl-markdown-content table:not(:where(.not-content *)) > tbody > tr > td {
@@ -139,7 +139,7 @@
 .sl-markdown-content code:not(:where(.not-content *)) {
   position: relative;
   border-radius: 0.25rem;
-  background-color: hsl(var(--muted));
+  background-color: var(--muted);
   padding-left: 0.3rem;
   padding-right: 0.3rem;
   padding-top: 0.2rem;

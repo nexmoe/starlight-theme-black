@@ -38,17 +38,17 @@ const { toc, depth = 0 } = Astro.props
 
   a {
     text-decoration-line: none;
-    color: hsl(var(--muted-foreground));
+    color: var(--muted-foreground);
     display: inline-block;
     text-decoration: inherit;
   }
 
   a:hover {
-    color: hsl(var(--foreground));
+    color: var(--foreground);
   }
 
   a[aria-current] {
-    color: hsl(var(--foreground));
+    color: var(--foreground);
   }
 
   ul > li > ul {

@@ -46,7 +46,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
 
 <style>
   .layout {
-    background-color: hsl(var(--background));
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     min-height: 100svh;
@@ -54,19 +54,19 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   .layout__grid {
-    border-color: hsl(var(--border) / 0.3);
+    border-color: color-mix(in oklab, var(--border) 30%, transparent);
     display: flex;
     flex-direction: column;
     flex: 1 1 0%;
   }
 
   :global([data-theme='dark']) .layout__grid {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
 
   .layout__header {
-    background-color: hsl(var(--background) / 0.6);
-    border-color: hsl(var(--border) / 0.3);
+    background-color: color-mix(in oklab, var(--background) 60%, transparent);
+    border-color: color-mix(in oklab, var(--border) 30%, transparent);
     border-bottom-width: 1px;
     border-bottom-style: solid;
     width: 100%;
@@ -78,7 +78,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   :global([data-theme='dark']) .layout__header {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
 
   .container__header {
@@ -114,7 +114,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   .aside {
-    border-color: hsl(var(--border) / 0.3);
+    border-color: color-mix(in oklab, var(--border) 30%, transparent);
     border-right-width: 1px;
     border-right-style: solid;
     flex-shrink: 0;
@@ -127,7 +127,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   :global([data-theme='dark']) .aside {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
 
   @media (min-width: 768px) {
@@ -138,7 +138,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   .footer {
-    border-color: hsl(var(--border) / 0.3);
+    border-color: color-mix(in oklab, var(--border) 30%, transparent);
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border-top-width: 1px;
@@ -146,7 +146,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   :global([data-theme='dark']) .footer {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
   @media (min-width: 768px) {
     .footer {
@@ -182,7 +182,7 @@ const { hasSidebar } = Astro.locals.starlightRoute
   }
 
   .footer-text {
-    color: hsl(var(--muted-foreground));
+    color: var(--muted-foreground);
     line-height: 2;
     font-size: 0.875rem;
     line-height: 1.25rem;

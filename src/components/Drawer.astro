@@ -110,7 +110,7 @@ const { siteTitleHref, sidebar } = Astro.locals.starlightRoute
   .content {
     width: 100%;
     position: relative;
-    background: hsl(var(--background));
+    background: var(--background);
     max-height: 100vh;
     height: 50vh;
     max-width: 1150px;
@@ -129,7 +129,7 @@ const { siteTitleHref, sidebar } = Astro.locals.starlightRoute
     height: 0.1rem;
     width: 100px;
     display: block;
-    background-color: hsl(var(--muted));
+    background-color: var(--muted);
     border-radius: 9999px;
     margin-top: 1rem;
   }
@@ -177,7 +177,7 @@ const { siteTitleHref, sidebar } = Astro.locals.starlightRoute
   .container-sidebar-entry a {
     font-size: 1rem;
     line-height: 1.5rem;
-    color: hsl(var(--muted-foreground));
+    color: var(--muted-foreground);
     text-decoration: inherit;
   }
 
