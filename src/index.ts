@@ -17,6 +17,9 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
     name: 'starlight-theme-black-plugin',
     hooks: {
       'config:setup': function ({ config: starlightConfig, logger, updateConfig, addIntegration }) {
+        const userExpressiveCodeConfig
+          = starlightConfig.expressiveCode === false || starlightConfig.expressiveCode === true ? {} : starlightConfig.expressiveCode
+
         updateConfig({
           components: overrideComponents(
             starlightConfig,
@@ -60,23 +63,21 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
             '@fontsource/geist-sans/700.css',
             '@fontsource/geist-sans/800.css',
             '@fontsource/geist-sans/900.css',
-            'starlight-theme-black/styles',
+            'starlight-theme-black/styles/layers',
+            'starlight-theme-black/styles/theme',
+            'starlight-theme-black/styles/base',
           ],
           expressiveCode:
             starlightConfig.expressiveCode === false
               ? false
               : {
+                  themes: ['github-dark-default', 'github-light'],
+                  ...userExpressiveCodeConfig,
                   styleOverrides: {
                     codeBackground: 'var(--code-background)',
                     borderColor: 'var(--border)',
                     borderRadius: '0.75rem',
-                    textMarkers: {
-                      markBackground: 'var(--mark-background)',
-                      markBorderColor: 'transparent',
-                      backgroundOpacity: '0.4',
-                      delBorderColor: 'transparent',
-                      insBorderColor: 'transparent',
-                    },
+                    ...userExpressiveCodeConfig?.styleOverrides,
                     frames: {
                       editorBackground: 'var(--code-background)',
                       editorTabBarBackground: 'var(--code-background)',
@@ -92,10 +93,17 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
                       terminalBackground: 'var(--code-background)',
                       terminalTitlebarBackground: 'var(--code-background)',
                       terminalTitlebarBorderBottomColor: 'var(--border)',
+                      ...userExpressiveCodeConfig?.styleOverrides?.frames,
+                    },
+                    textMarkers: {
+                      markBackground: 'var(--mark-background)',
+                      markBorderColor: 'transparent',
+                      backgroundOpacity: '0.4',
+                      delBorderColor: 'transparent',
+                      insBorderColor: 'transparent',
+                      ...userExpressiveCodeConfig?.styleOverrides?.textMarkers,
                     },
                   },
-                  themes: ['github-dark-default', 'github-light'],
-                  ...(typeof starlightConfig.expressiveCode === 'object' ? starlightConfig.expressiveCode : {}),
                 },
         })
 

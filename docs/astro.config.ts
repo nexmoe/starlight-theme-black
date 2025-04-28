@@ -45,9 +45,12 @@ export default defineConfig({
           label: 'Start Here',
           items: [
             { slug: 'getting-started' },
-            { slug: 'test-toc' },
-            { slug: 'tailwind', badge: 'New' },
+            { slug: 'customization', badge: 'New' },
           ],
+        },
+        {
+          label: 'Examples',
+          autogenerate: { directory: 'examples' },
         },
       ],
       social: [

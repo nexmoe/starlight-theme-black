@@ -26,7 +26,9 @@
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
-    "./styles": "./src/styles.css",
+    "./styles/base": "./src/styles/base.css",
+    "./styles/layers": "./src/styles/layers.css",
+    "./styles/theme": "./src/styles/theme.css",
     "./schema": "./src/schema.ts",
     "./components": "./src/user-components.ts",
     "./overrides/ThemeSelect.astro": "./src/overrides/ThemeSelect.astro",
@@ -44,7 +46,8 @@
     "./overrides/Pagination.astro": "./src/overrides/Pagination.astro",
     "./overrides/Search.astro": "./src/overrides/Search.astro",
     "./overrides/TableOfContents.astro": "./src/overrides/TableOfContents.astro",
-    "./overrides/PageSidebar.astro": "./src/overrides/PageSidebar.astro"
+    "./overrides/PageSidebar.astro": "./src/overrides/PageSidebar.astro",
+    "./package.json": "./package.json"
   },
   "files": [
     "src"
