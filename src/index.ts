@@ -71,7 +71,7 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
             starlightConfig.expressiveCode === false
               ? false
               : {
-                  themes: ['github-dark-default', 'github-light'],
+                  themes: ['github-dark-default', 'github-light-default'],
                   ...userExpressiveCodeConfig,
                   styleOverrides: {
                     codeBackground: 'var(--code-background)',
