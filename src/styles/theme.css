@@ -32,8 +32,8 @@
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.556 0 0);
-    --code-background: oklch(0.145 0 0);
-    --mark-background: oklch(0.145 0 0 / 0.5);
+    --code-background: oklch(0.21 0.01 286);
+    --mark-background: oklch(0.37 0.01 286);
   }
 
   :root[data-theme='light'] {
@@ -58,7 +58,7 @@
     --border: oklch(0.922 0 0);
     --input: oklch(0.922 0 0);
     --ring: oklch(0.708 0 0);
-    --code-background: oklch(1 0 0);
-    --mark-background: oklch(1 0 0 / 0.01);
+    --code-background: oklch(0.97 0 286);
+    --mark-background: oklch(0.92 0 286);
   }
 }

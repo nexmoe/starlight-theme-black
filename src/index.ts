@@ -1,5 +1,7 @@
 import type { StarlightPlugin } from '@astrojs/starlight/types'
 
+import { createInlineSvgUrl } from '@astrojs/starlight/expressive-code'
+
 import { StarlightThemeBlackConfigSchema, type StarlightThemeBlackUserConfig } from './libs/config'
 import { overrideComponents } from './libs/starlight'
 import { vitePluginStarlightThemeBlack } from './libs/vite'
@@ -75,32 +77,19 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
                   ...userExpressiveCodeConfig,
                   styleOverrides: {
                     codeBackground: 'var(--code-background)',
-                    borderColor: 'var(--border)',
-                    borderRadius: '0.75rem',
+                    borderWidth: '0px',
+                    borderRadius: 'calc(var(--radius) + 4px)',
+                    gutterBorderWidth: '0px',
                     ...userExpressiveCodeConfig?.styleOverrides,
                     frames: {
                       editorBackground: 'var(--code-background)',
-                      editorTabBarBackground: 'var(--code-background)',
-                      editorTabBarBorderBottomColor: 'var(--border)',
-                      editorTabBarBorderColor: 'var(--border)',
-                      editorActiveTabBackground: 'var(--code-background)',
-                      editorActiveTabBorderColor: 'var(--border)',
-                      editorActiveTabIndicatorTopColor: 'var(--code-background)',
-                      editorActiveTabIndicatorBottomColor: 'var(--code-background)',
-                      tooltipSuccessBackground: 'var(--input)',
-                      tooltipSuccessForeground: 'var(--input-foreground)',
-                      frameBoxShadowCssValue: 'unset',
                       terminalBackground: 'var(--code-background)',
-                      terminalTitlebarBackground: 'var(--code-background)',
-                      terminalTitlebarBorderBottomColor: 'var(--border)',
+                      copyIcon: createInlineSvgUrl(`<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>`),
                       ...userExpressiveCodeConfig?.styleOverrides?.frames,
                     },
                     textMarkers: {
                       markBackground: 'var(--mark-background)',
-                      markBorderColor: 'transparent',
-                      backgroundOpacity: '0.4',
-                      delBorderColor: 'transparent',
-                      insBorderColor: 'transparent',
+                      markBorderColor: 'var(--border)',
                       ...userExpressiveCodeConfig?.styleOverrides?.textMarkers,
                     },
                   },
