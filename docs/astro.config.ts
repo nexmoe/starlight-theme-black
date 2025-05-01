@@ -3,12 +3,18 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
 import starlightThemeBlack from 'starlight-theme-black'
+import { devServerFileWatcher } from './config/integrations/dev-server-file-watcher'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://starlight-theme-black.vercel.app/',
 
   integrations: [
+    devServerFileWatcher([
+      '../package.json',
+      '../src/**/*.ts',
+      '../src/**/*.json',
+    ]),
     starlight({
       logo: {
         dark: './src/assets/logo-dark.svg',
