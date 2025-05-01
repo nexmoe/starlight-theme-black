@@ -14,7 +14,7 @@ const { siteTitleHref, sidebar } = Astro.locals.starlightRoute
     </div>
     <div class="body">
       <div class="links-nav">
-        <a href={siteTitleHref}>{Astro.locals.t('theme-black.home')}</a>
+        <a href={siteTitleHref}>{Astro.locals.t('black.home')}</a>
         {
           userConfig.navLinks?.map((nav) => {
             const absoluteLinkRegex = /^https?:\/\//

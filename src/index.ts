@@ -5,6 +5,7 @@ import { createInlineSvgUrl } from '@astrojs/starlight/expressive-code'
 import { StarlightThemeBlackConfigSchema, type StarlightThemeBlackUserConfig } from './libs/config'
 import { overrideComponents } from './libs/starlight'
 import { vitePluginStarlightThemeBlack } from './libs/vite'
+import translations from './translations'
 
 export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserConfig): StarlightPlugin {
   const parsedConfig = StarlightThemeBlackConfigSchema.safeParse(userConfig)
@@ -106,18 +107,7 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
         })
       },
       'i18n:setup': function ({ injectTranslations }) {
-        injectTranslations({
-          en: {
-            'theme-black.home': 'Home',
-            'theme-black.links.doc': 'Docs',
-            'theme-black.links.api': 'API Reference',
-          },
-          es: {
-            'theme-black.home': 'Inicio',
-            'theme-black.links.doc': 'Docs',
-            'theme-black.links.api': 'Referencia de la API',
-          },
-        })
+        injectTranslations(translations)
       },
     },
   }
