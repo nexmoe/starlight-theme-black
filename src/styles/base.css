@@ -1,9 +1,6 @@
 @layer black {
   * {
     border-color: var(--border);
-
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
   }
 
   *,

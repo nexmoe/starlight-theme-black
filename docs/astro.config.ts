@@ -2,12 +2,12 @@ import starlight from '@astrojs/starlight'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
-import starlightThemeBlack from 'starlight-theme-black'
+import starlightThemeBlack from 'starlight-theme-mint'
 import { devServerFileWatcher } from './config/integrations/dev-server-file-watcher'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://starlight-theme-black.vercel.app/',
+  site: 'https://starlight-theme-mint.vercel.app/',
 
   integrations: [
     devServerFileWatcher([
@@ -22,7 +22,7 @@ export default defineConfig({
         alt: 'Starlight Black',
       },
       editLink: {
-        baseUrl: 'https://github.com/adrian-ub/starlight-theme-black/edit/main/docs/',
+        baseUrl: 'https://github.com/nexmoe/starlight-theme-mint/edit/main/docs/',
       },
       customCss: [
         './src/styles/global.css',
@@ -60,7 +60,7 @@ export default defineConfig({
         },
       ],
       social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/adrian-ub/starlight-theme-black' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/nexmoe/starlight-theme-mint' },
       ],
       title: 'starlight/black',
     }),

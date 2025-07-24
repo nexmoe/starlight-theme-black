@@ -48,9 +48,9 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
           ),
           customCss: [
             ...(starlightConfig.customCss ?? []),
-            'starlight-theme-black/styles/layers',
-            'starlight-theme-black/styles/theme',
-            'starlight-theme-black/styles/base',
+            'starlight-theme-mint/styles/layers',
+            'starlight-theme-mint/styles/theme',
+            'starlight-theme-mint/styles/base',
           ],
           expressiveCode:
             starlightConfig.expressiveCode === false

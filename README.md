@@ -25,7 +25,7 @@ Starlight theme inspired by Shadcn docs
 [npm-version-href]: https://npmjs.com/package/starlight-theme-black
 [npm-downloads-src]: https://img.shields.io/npm/dm/starlight-theme-black?style=flat&colorA=080f12&colorB=1fa669
 [npm-downloads-href]: https://npmjs.com/package/starlight-theme-black
-[license-src]: https://img.shields.io/github/license/adrian-ub/starlight-theme-black.svg?style=flat&colorA=080f12&colorB=1fa669
-[license-href]: https://github.com/adrian-ub/starlight-theme-black/blob/main/LICENSE
+[license-src]: https://img.shields.io/github/license/nexmoe/starlight-theme-mint.svg?style=flat&colorA=080f12&colorB=1fa669
+[license-href]: https://github.com/nexmoe/starlight-theme-mintb/main/LICENSE
 [jsdocs-src]: https://img.shields.io/badge/jsdocs-reference-080f12?style=flat&colorA=080f12&colorB=1fa669
 [jsdocs-href]: https://www.jsdocs.io/package/starlight-theme-black

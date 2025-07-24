@@ -56,7 +56,7 @@
     "release": "bumpp && npm publish",
     "typecheck": "astro check --minimumSeverity warning --noSync && pnpm --filter docs typecheck",
     "prepare": "simple-git-hooks",
-    "docs": "nr -C docs dev",
+    "docs": "pnpm run -C docs dev",
     "docs:build": "nr -C docs build"
   },
   "peerDependencies": {
@@ -81,6 +81,9 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
   },
   "lint-staged": {
     "*": "eslint --fix"
