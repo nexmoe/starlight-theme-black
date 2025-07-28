@@ -60,8 +60,6 @@ export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserC
                   ...userExpressiveCodeConfig,
                   styleOverrides: {
                     codeBackground: 'var(--code-background)',
-                    borderWidth: '0px',
-                    borderRadius: 'calc(var(--radius) + 4px)',
                     gutterBorderWidth: '0px',
                     ...userExpressiveCodeConfig?.styleOverrides,
                     frames: {

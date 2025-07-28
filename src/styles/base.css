@@ -420,10 +420,6 @@
     box-shadow: none;
   }
 
-  .expressive-code pre {
-    border-radius: 0.25rem;
-  }
-
   .markdown-wrapper {
     padding-top: 0 !important;
   }
