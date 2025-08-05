@@ -7,7 +7,6 @@ import LanguageSelect from '@astrojs/starlight/components/LanguageSelect.astro'
 import ThemeSelect from './ThemeSelect.astro'
 import SiteTitle from './SiteTitle.astro'
 import NavBar from '../components/NavBar.astro'
-import MobileMenuToggle from './MobileMenuToggle.astro'
 
 /**
  * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
@@ -19,8 +18,6 @@ const shouldRenderSearch = config.pagefind || config.components.Search !== '@ast
   <SiteTitle />
   <NavBar />
 </div>
-
-<MobileMenuToggle />
 
 <div class="header-right">
   {shouldRenderSearch && <Search />}
