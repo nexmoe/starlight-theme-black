@@ -42,7 +42,7 @@ export const StarlightThemeBlackConfigSchema = z.object({
    * 可以填写绝对路径（例如 `/src/components/CustomFooter.astro`）、项目内别名路径，或依赖包导出路径。
    */
   footerComponent: z.string().optional(),
-  footerText: z.string().optional().default('Built & designed by [shadcn](https://twitter.com/shadcn). Ported to Astro Starlight by [Adrián UB](https://github.com/adrian-ub). The source code is available on [GitHub](https://github.com/nexmoe/starlight-theme-mint).'),
+  footerText: z.string().optional(),
 })
 
 export type StarlightThemeBlackUserConfig = z.input<typeof StarlightThemeBlackConfigSchema>

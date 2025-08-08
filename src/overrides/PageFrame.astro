@@ -50,19 +50,20 @@ if (userConfig.footerComponent) {
         )
       }
     </main>
-    <footer class="footer">
-      {
-        FooterContainer ? (
-          <FooterContainer />
-        ) : (
-          <div class="container-wrapper">
-            <div class="container footer-container">
-              <div class="footer-text" set:html={marked.parseInline(userConfig.footerText)} />
+    {
+      (FooterContainer || userConfig.footerText) && (
+        <footer class="footer">
+          {FooterContainer && <FooterContainer />}
+          {userConfig.footerText && (
+            <div class="container-wrapper">
+              <div class="container footer-container">
+                <div class="footer-text" set:html={marked.parseInline(userConfig.footerText)} />
+              </div>
             </div>
-          </div>
-        )
-      }
-    </footer>
+          )}
+        </footer>
+      )
+    }
   </div>
   <Drawer />
 </div>

@@ -2,7 +2,7 @@ import starlight from '@astrojs/starlight'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 
-import starlightThemeBlack from 'starlight-theme-mint'
+import starlightThemeMint from 'starlight-theme-mint'
 import { devServerFileWatcher } from './config/integrations/dev-server-file-watcher'
 
 // https://astro.build/config
@@ -28,7 +28,7 @@ export default defineConfig({
         './src/styles/global.css',
       ],
       plugins: [
-        starlightThemeBlack({
+        starlightThemeMint({
           footerComponent: '/src/footer.astro',
           navLinks: [
             {
