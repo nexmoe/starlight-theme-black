@@ -7,7 +7,7 @@ import { overrideComponents } from './libs/starlight'
 import { vitePluginStarlightThemeBlack } from './libs/vite'
 import translations from './translations'
 
-export default function starlightThemeBlack(userConfig: StarlightThemeBlackUserConfig): StarlightPlugin {
+export default function starlightThemeMint(userConfig: StarlightThemeBlackUserConfig): StarlightPlugin {
   const parsedConfig = StarlightThemeBlackConfigSchema.safeParse(userConfig)
 
   if (!parsedConfig.success) {

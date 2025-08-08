@@ -5,6 +5,23 @@ import userConfig from 'virtual:starlight-theme-black-config'
 import Drawer from '../components/Drawer.astro'
 
 const { hasSidebar } = Astro.locals.starlightRoute
+
+// 支持用户通过配置提供自定义页脚组件，直接覆盖 container-wrapper 的全部内容
+const userFiles = import.meta.glob('/src/**/*.{astro,tsx,jsx}', { eager: false })
+let FooterContainer: any = null
+if (userConfig.footerComponent) {
+  const key = userConfig.footerComponent as keyof typeof userFiles
+  if (key in userFiles) {
+    const mod = await userFiles[key]()
+    FooterContainer = (mod as any).default ?? null
+  } else {
+    try {
+      // 允许以包名或别名方式导入
+      const mod = await import(/* @vite-ignore */ userConfig.footerComponent)
+      FooterContainer = (mod as any).default ?? null
+    } catch {}
+  }
+}
 ---
 
 <div class="layout">
@@ -34,11 +51,17 @@ const { hasSidebar } = Astro.locals.starlightRoute
       }
     </main>
     <footer class="footer">
-      <div class="container-wrapper">
-        <div class="container footer-container">
-          <div class="footer-text" set:html={marked.parseInline(userConfig.footerText)} />
-        </div>
-      </div>
+      {
+        FooterContainer ? (
+          <FooterContainer />
+        ) : (
+          <div class="container-wrapper">
+            <div class="container footer-container">
+              <div class="footer-text" set:html={marked.parseInline(userConfig.footerText)} />
+            </div>
+          </div>
+        )
+      }
     </footer>
   </div>
   <Drawer />

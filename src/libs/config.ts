@@ -37,6 +37,11 @@ const navLinkSchema = z.object({
 
 export const StarlightThemeBlackConfigSchema = z.object({
   navLinks: z.array(navLinkSchema).optional(),
+  /**
+   * 自定义页脚组件：当提供时，将完全替换 `PageFrame` 页脚区域内 `container-wrapper` 的所有内容。
+   * 可以填写绝对路径（例如 `/src/components/CustomFooter.astro`）、项目内别名路径，或依赖包导出路径。
+   */
+  footerComponent: z.string().optional(),
   footerText: z.string().optional().default('Built & designed by [shadcn](https://twitter.com/shadcn). Ported to Astro Starlight by [Adrián UB](https://github.com/adrian-ub). The source code is available on [GitHub](https://github.com/nexmoe/starlight-theme-mint).'),
 })
 

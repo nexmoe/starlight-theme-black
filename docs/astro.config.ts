@@ -29,6 +29,7 @@ export default defineConfig({
       ],
       plugins: [
         starlightThemeBlack({
+          footerComponent: '/src/footer.astro',
           navLinks: [
             {
               label: 'Docs',
